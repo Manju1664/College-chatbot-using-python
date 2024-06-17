@@ -1,0 +1,45 @@
+def display_options():
+    print("Please choose an option by typing the corresponding number:")
+    print("1. Admission")
+    print("2. Courses")
+    print("3. Fee Structure")
+    print("4. Contact Information")
+    print("5. Other (type your query)")
+
+def chatbot_response(user_input):
+    if user_input == "1":
+        return "You can apply for admission by visiting our college website and filling out the application form."
+    elif user_input == "2":
+        return "We offer various courses including Computer Science, Electrical Engineering, Mechanical Engineering, and Civil Engineering."
+    elif user_input == "3":
+        return "The fee structure varies depending on the course. Please visit our college website for detailed information."
+    elif user_input == "4":
+        return "You can contact the administration via email at admin@svrec.edu or call us at 123-456-7890."
+    else:
+        user_input = user_input.lower()
+        if "hi" in user_input or "hello" in user_input:
+            return "Hello! How can I help you?"
+        elif "name" in user_input:
+            return "I am your college chatbot, here to assist you with your queries."
+        elif "thank you" in user_input or "thanks" in user_input:
+            return "You're welcome! Happy to help!"
+        elif "quit" in user_input:
+            return "Goodbye! Have a great day!"
+        else:
+            return "I'm sorry, I don't have an answer for that. Please contact the administration for more information."
+
+def chatbot_interface():
+    print("Hello! I am your college chatbot. How can I assist you?")
+    print("Type 'quit' to end the conversation.")
+    
+    while True:
+        display_options()
+        user_input = input("> ")
+        response = chatbot_response(user_input)
+        print(response)
+        
+        if user_input.lower() == "quit":
+            break
+
+if __name__ == "__main__":
+    chatbot_interface()
